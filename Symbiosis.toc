@@ -1,0 +1,36 @@
+## Interface: 50400
+
+## Title: Symbiosis
+
+## Version: 0.52
+
+## Notes: Reminds and helps you to use |cff45FF54Symbiosis|r.
+
+## Notes-deDE: Erinnert dich und hilft dir, |cff45FF54Symbiose|r zu benutzen.
+
+## Author: |cffFF7D0AHoochie|r @EU-Dethecus
+
+## SavedVariablesPerCharacter: SymbConfig, SymbButton
+
+## OptionalDeps: Masque
+
+Libs\LibStub.lua
+Libs\CallbackHandler-1.0.lua
+Libs\LibSharedMedia-3.0.lua
+Libs\LibGroupInSpecT-1.0.lua
+
+Locals\Localization.enUS.lua
+Locals\Localization.deDE.lua
+Locals\Localization.frFR.lua
+Locals\Localization.koKR.lua
+Locals\Localization.esES.lua
+# Locals\Localization.itIT.lua
+
+Media\SymbiosisMedia.lua
+
+SymbiosisGlobals.lua
+SymbiosisBindingMacro.lua
+SymbiosisGUI.lua
+SymbiosisSavedVars.lua
+SymbiosisButton.lua
+SymbiosisSlashCommands.lua

@@ -1,0 +1,290 @@
+Version 0.52
+		*updated version of LibGroupInSpecT
+
+Version 0.51
+		* added a workaround for ElvUI's Shadow&Light taint: disabling the Symbiosis macro (and not opening the macro window) will prevent a bug with talent switching [comment]
+		* minor fix
+
+Version 0.50
+		* added safety mechanism for 'SymbiosisButton.lua:737: Usage: UnitBuff' error [comment]
+
+Version 0.49
+		* added option to prioritize and ignore specific classes in the popup (see "Spells Get" panel)
+		* added option to change size of popup buttons and icons (use "Change size" in the GUI)
+		* fixed the Symbiosis spell link in whisper message for English clients
+		* minor fixes, code improvements and aesthetic changes
+
+Version 0.48
+		* only show header when there are people in the popup list
+		* suppress remove message for shift-click in arena
+		* popup won't open during combat when in arena now
+		* minor fixes and aesthetic changes
+
+Version 0.47
+		* added full support for Spanish localization [many thanks and credits to kronosh05!]
+
+Version 0.46
+		* improved grant-spell detection for whispers (only relevant for non-english clients)
+		* complete overhaul of the global namespace usage [ticket]
+
+Version 0.45
+		* now the workaround from v0.44 should work completely
+
+Version 0.44
+		* added workaround for two blizz bugs in the gui (slider steps not working; and panels not displaying correclty on first show after reloadui/login)
+
+Version 0.43
+		* TOC update for 5.4
+		* added flexible raid mode to show/hide list
+
+Version 0.42
+		* added option to not display realm on unit names (enabled by default)
+		* fixed a bug that button would not show/hide properly in Tol'Vir arena (induced by Blizzard bug)
+		* opening popup and using slider will hide the main tooltip now
+		* reminder on readycheck will occur when no target is selected now, too (but will not when Symb button is hidden)
+		* fixed a bug that Symbiosis button would stay in "click to remove" status forever, occuring when in lopsided state but Symbiosis buff was removed at some point later by the WoW client
+		* fixed a rare bug for when no talent data from other units is available
+		* several minor gui and code improvements
+
+Version 0.41
+		* readded "outside" to show/hide list
+		* name in the "target left party" message is in class color now, if available
+		* minor code improvements
+
+Version 0.40
+		* fixed an issue with cooldown display [ticket]
+		* fixed reloading for new available spec data
+		* fixed first icon in list not showing sometimes
+		* minor code improvements
+
+Version 0.39
+		* added option to move the popup [ticket]
+		* refixed show/hide list (some were not visible)
+		* minor improvement to spell info list: classes are now in class color
+
+Version 0.38
+		* fixed: scenario show/hide was not working right, because blizzard decided to skip the 10 (GetDifficultyInfo)
+		* fixed '/symb config' not showing config on first call after every reload (upon a second call it would work)
+		* use proper CD when changing Symbiosis target [ticket]
+		* minor spelling fix [ticket]
+
+Version 0.37
+		* added scenarios and heroic scenarios to show/hide list. and with that...
+		* ...fixed 'attempt to concatenate local "Type" (a nil value)' bug
+
+Version 0.36
+		* fixed 'loop' state when canceling buff while in combat [ticket]
+		* added info in popup on units which are to far away to scan for talents [ticket]
+		* added support for 'Class Colors' addon
+		* TOC update for 5.3
+
+Version 0.35
+		* minor bug fix ("bad argument to strmatch")
+
+Version 0.34
+		* added new workaround for the new version of the "lopsided" state of Symbiosis buff [ticket] (can be disabled in config)
+		* added refresh button to popup (e.g. useful when you respec while popup is open)
+		* new data of other people's talents will be pushed to popup automatically [ticket]
+		* when groupsize changes: we refresh the data in the popup. was a bit wonky before.
+		* button should turn gray when selected unit is not in the same zone as player and red when in same zone but out of range [ticket] (you can roll back to standard behavior in the config)
+		* minor fixes and improvements
+
+Version 0.33
+		* bugfix: the button would reshow in pet battle sometimes
+		* removed workaround from 0.31. seems blizzard fixed the bug in one of the last hotfixes
+
+Version 0.32
+		* removed hint that macro was not in action bar - was obsolete and could result in lua error in some cases
+
+Version 0.31
+		* bugfix: when target changed single talents and thus removed buff - macro/button behaviour would not update correctly and resulting in a 'Invalid target' message when clicking
+		* workaround: blizzard decided to add yet another feature/bug for Symbiosis - you will keep the Symbiosis buff even when your target leaves the party. the addon will keep the target now till you change it. this may still be buggy sometimes.
+		* will show CD of Symbiosis itself when buff is removed
+
+Version 0.30
+		* update for 5.2
+
+Version 0.29
+		* updated German localization
+		* bugfix: spec portion of show/hide stuff would not save properly
+		* improved reloading Symbiosis target when buff is up on startup
+		* added tooltip to clarify 'question mark' icon in popup: data for spec of unit is not yet (!) available
+
+Version 0.28
+		* bugfix: old saved background data is actually reseted now
+
+Version 0.27
+		* you can disable the creation of the macro now (the macro is used for the keybinding, if you don't use that you don't need the macro)
+		* click on "Background Name" box (in popup panel of gui) will let you jump to current selected background now
+		* added border selection with LibSharedMedia and improved the handling of the whole media stuff: previously selected backgrounds are reset with this update!
+
+Version 0.26
+		* minor performance improvement and bug fix
+
+Version 0.25
+		* fixed bug for low level characters without specalization
+		* the Symbiosis button should now turn red if the selected target (symbiosis target when buff is not up, normal target when buff is up) is not in cast range (action button-like behaviour) [ticket]
+		* tags in popup list are now click-through (except 'stolen'-tag)
+		* old icons are properly removed from popup now
+		* you can open the popup list and select a new Symbiosis target now in combat
+		* updated french localization. once again thanks to tabbet!
+		* will show tooltip of spell when a target is selected on Symbiosis button [ticket]
+		
+Version 0.24
+		* the language of the whisper message can be changed now [ticket]
+		* minor code cleanups
+
+Version 0.23
+		* fixed bug 'attempt to index upvalue "SymbiosisButton" (a nil value)' [ticket]
+		* fixed a bug when header was disabled
+
+Version 0.22
+		* fixed bug with saved slider position
+
+Version 0.21
+		* updated German localization. thanks to Guselmur!
+
+Version 0.20
+		* added option to show a little warning in the middle of the screen when buff is not up on ready check (is enabled by default; can be disabled) [ticket]
+		* updated version of LibGroupInSpecT
+		* corrected spell moonkin gets from priest
+		* minor code cleanups/fixes and GUI improvements
+		* improvements to popup list:
+		* 1.: added header to clarify which spell user gets and which spell is granted to Symbiosis target (header can be hidden in the gui)
+		* 2.: added tooltip of caster name when target is stolen (on mouseover)
+		* 3.: will try to remember slider position
+
+Version 0.19
+		* button will not be shown if user does not know Symbiosis spell
+
+Version 0.18
+		* added spell granted (to the symbiosis target) in the popup list
+		* updated and completed french localization, thanks again to tabbet!
+		* minor code cleanups and fixes
+
+Version 0.17
+		* fixed a bug when loading up with target from a different realm
+
+Version 0.16
+		* fixed bug which sometimes would result in an "invalid target" cast when Symbiosis button was clicked
+		* macro will be updated everytime a new target is selected now
+		* completly revamped show/hide stuff, check it out in the gui (/symb config)
+		* when calling "/symb show" or "/symb hide" the automatization of the show/hide stuff will be disabled (and can be enabled again in the gui)
+		* added Korean localization. thanks to factness!
+		* will redo cd animation on selecting new target, so we dont drag old animations along
+		* fixed "hide raidmember in insignificant group"
+		* added little keybinding-tag, shown when mousing over Symbiosis button
+		* will reset button to last target if buff is up on login/uireload [ticket]
+		* will whisper the correct spell the target gets in whisper, instead of list of all possible spells
+		* a few code cleanups and fixes
+		
+Version 0.15
+		* updated TOC to 5.1
+		* updated tank spells
+
+Version 0.14
+		* "/symb resetmacro" will update current macro when called
+
+Version 0.13
+		* fixed bug with Symbiosis button not showing up on first login when it should
+		* standard macro code uses localized Symbiosis spell name now ("/symb resetmacro" to restore standard code)
+		* minor code cleanups
+
+Version 0.12
+		* popup is moved down/up when to big, so it should no longer get out of bounds
+		* buff removing per shift-click is always disabled in arena now
+		* fixed minor bug in whisper panel
+		* removed debug number from slider
+		* minor code tweaks
+
+Version 0.11
+		* fixed SetCooldown bug [ticket]
+
+Version 0.10
+		* list of raid members in popup is sorted by class now
+		* fixed issue with spammy cooldown animation for abilities not on the GCD
+
+Version 0.9
+		* click on Symbiosis button will cast Symbiosis on targets based on name (was based on unit ID). this should be more accurate even when in combat.
+
+Version 0.8
+		* attempt to fix masque support [ticket]
+		* "Symbiosis" is now a spell link in whispers
+		* if hidden by "auto hide if not in party" addon will recheck location/spec when we join party
+		* fixed auto-hide on petbattles
+		* a few code tweaks
+
+Version 0.7
+		* updated protection paladin spell (now gets rebirth)
+
+Version 0.6
+		* added option to show GCD on Symbiosis button [ticket]
+		* added option to autohide Symbiosis button when not in party
+		* removed "Dur.:" from timer tag below Symbiosis button, was obsolete [ticket]
+		* moved "Remove 'No target' tag" from popup panel to main panel and moved "Target config" to popup panel from main panel
+		* added Masque/ButtonFacade support [ticket] (please report any bugs, because I don't use Masque myself)
+		* will show/hide symbiosis button based on spec/location later again if currently in combat
+		* added option to simplify whisper message on consecutive whispers [ticket]
+		* added option to disable whispers in arena
+		* fixed typo, preventing in v0.3 added feature to work: will preserve status if Symbiosis button is shown/hidden manually "outside"
+
+Version 0.5
+		* added french localization. thanks to tabbet!
+
+Version 0.4
+		* fixed name tag not showing sometimes
+		* spells in popup are linkable to chat now, too
+
+Version 0.3
+		* workaround for target-bug of Symbiosis added (casting Symbiosis with the Symbiosis button should work now!)
+		* updated tank spells
+		* added option to hide "No Target" tag above Symbiosis button
+		* cooldown animation is reseted when target is removed
+		* links in GUI info panel are linkable to chat now
+		* will preserve status if Symbiosis button is shown/hidden manually "outside"
+		* replaced text on buttons in "spells granted"-panel with icons
+
+Version 0.2
+		* fixed order of monk specs
+		* enabled whisper message for all Symbiosis casts, not only for casts from the Symbiosis button itself
+		* added notice that status of Symbiosis button cannot be changed in combat
+		* many minor improvements, fixes and code cleanups
+
+Version 0.1
+		* addon should load up on live realms with 5.0.4, but shouldn't do anything because players can't learn Symbiosis, yet.
+		* macro is updated when macro code changes
+		* macro is no longer deleted on every /reload
+		* dummy replacement in macro should work properly now
+		* you can change the background art of the popup menu now (in the GUI)
+		* implemented German localization
+		* addon won't print "first login" message again, even if player does not know symbiosis
+		* some minor code cleanups and fixes
+
+Version 0.0.5 (beta)
+		* removed first key binding, we will only use the second
+		* the key binding fires a macro, you can edit that macro in the GUI now
+		* fixed bug when starting up with no saved vars
+		* Symbiosis button will be hidden while in a pet battle now
+		* added check if user has enough space for a new macro when we want to create one (we need a macro for the key binding)
+		* no popup when user does not know Symbiosis spell
+		* preparing localization
+
+Version 0.0.4 (beta)
+		* toc update to 5.0.3
+		* symbiosis button will show cooldown of symbiosis now
+		* added show/hide based on spec
+		* added 2 key bindings to cast symbiosis
+		* drag status is saved between sessions now
+		* whisper stuff should work now (delay between whispers is 1min)
+		* some GUI improvements
+
+Version 0.0.3 (beta)
+		* fixed bug with talent group event
+
+Version 0.0.2 (beta)
+		* target will be removed when it leaves party correctly now (event changed)
+		* icon on symbiosis button will change when player changes specs now
+		* addon will not load up on live realms now
+
+Version 0.0.1 (beta)
+		* initial release on beta realms

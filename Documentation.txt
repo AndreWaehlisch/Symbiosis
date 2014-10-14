@@ -1,0 +1,83 @@
+== <<size 220%>><<color #FF7D0A>>__Symbiosis__<</color>><</size>>
+
+With the release of the patch 6.0.2 (15.10.2014) the Symbiosis spell was removed and development of this addon was closed down.
+
+=== This addon creates a new button in your UI to help you choose your target for [[http://www.wowhead.com/spell=110309|Symbiosis]] and provides a timer for the buff, so you know by glance when to recast it.
+
+When you start the addon for the first time you will see a new button in the middle of the screen with the Symbiosis symbol - you can drag it wherever you like. After that you can hit the green "Lock" button above to fixate it (or use the little "x"-button to leave it dragable).
+
+== <<size 150%>><<color #0070DE>>__Tickets / comments__<</color>><</size>>
+
+Found a **bug** or have an idea for a **new feature**? Open a [[http://code.google.com/p/symbiosis-wowaddon/issues/entry|ticket]] or post in the comments below.
+
+== <<size 150%>><<color #0070DE>>__How to use this addon__<</color>><</size>>
+
+When you are in a party/raid **right-click the Symbiosis button**. You will see a list of all buffable raidmembers pop up. Basically these are all non-druids from your raid, because we can't cast Symbiosis on other druids. Next to the name of every member you will see two spell icons. You can mouse over them to see the spell details. These are the spell Symbiosis will grant you when you cast it on this specific raid member and the spell the raid member will get. A question mark hints that the spec data for a unit is not yet available (which is needed to know which spell other players get) - refresh the popup to check for new data. To see a list of all possible Symbiosis spells navigate to the GUI (Graphical User Interface) with <<color #FF0000>>/symbiosis options<</color>> -> "Spell Get/Grant".
+
+**Click on a raid member in the list to select your Symbiosis target.** The Symbiosis button will then show you the name and the remaining duration of the buff at the button. When you left-click the Symbiosis button you will cast the Symbiosis spell on your selected target. You can shift-left-click the Symbiosis button to remove your Symbiosis buff quickly (this can be disabled in the GUI and is always disabled during arena).
+
+=== __<<color #69CCF0>>Slash Commands<</color>>
+
+You can use <<color #FF0000>>/symbiosis<</color>>, <<color #FF0000>>/symb<</color>> or <<color #FF0000>>/sym<</color>> for all slash commands.
+
+There are only a few slash commands, as most stuff is done in the GUI:
+
+<<color #FF0000>>/symbiosis options<</color>> - to open the GUI
+
+<<color #FF0000>>/symbiosis hide/show/toggle<</color>> - to change visibility of the Symbiosis button
+
+<<color #FF0000>>/symbiosis remove<</color>> - to remove your current Symbiosis target for whatever reasons
+
+<<color #FF0000>>/symbiosis reset<</color>> - to reset the position of the Symbiosis button if you dragged it off screen
+
+== <<size 150%>><<color #0070DE>>__Graphical User Interface (GUI)__<</color>><</size>>
+
+You can open the GUI with <<color #FF0000>>/symbiosis options<</color>> or by hitting the Esc-button and navigating to "Interface" -> "Addons" -> "Symbiosis".
+
+=== __<<color #69CCF0>>Show/Hide<</color>>
+
+You can setup when the Symbiosis button should be shown and when it should be hidden based on your location, your spec and your groupsize.
+
+There are three different states for every checkbox. Enabled, disabled and unchecked. "ENABLED" means that the Symbiosis button will be shown for the specific spec/location/groupstatus. "DISABLED" means that the button will be hidden. "IGNORED" (unchecked) means the current status of the button will not be changed.
+
+If at least one state evaluates to "disabled" the button will be hidden, otherwise if at least one evaluates to "enabled" the button will be shown, otherwise the status is not changed.
+
+The button will always be hidden during pet battles.
+
+=== __<<color #69CCF0>>Whisper<</color>>
+
+The addon may send a whisper to the person you buff with Symbiosis. You have to select your target in the popup and then cast Symbiosis for the whisper to go off. You can include the spells you and he/she gets from Symbiosis. The delay between two whispers is 1 minute, to prevent spam.
+
+=== __<<color #69CCF0>>Macro (adv.)<</color>>
+
+This is for advanced users only.
+
+The addon provides a hotkey, which you can define in the standard key bindings. Using this hotkey will simulate a click on the Symbiosis button, i.e. it will cast Symbiosis on your selected target (if Symbiosis is not up) or it will cast the spell gained by Symbiosis (if it is up). To do this the addon uses a macro. If you want to edit this macro's code you must do it in this GUI panel. The addon will always refresh the macro with your current Symbiosis target. For this to work you have to use **SYMB** as a substitute for the Symbiosis target. The addon will then remove all instances of "[@SYMB]" and replace all instances of "SYMB" with the name of the target. The standard macro (which you can restore with <<color #FF0000>>/symbiosis resetmacro<</color>>) will do the following: If Symbiosis is not up, it will cast Symbiosis on the selected raid member ("/cast [@SYMB] Symbiosis", where SYMB is replaced by the name of the player). Then after Symbiosis is up, the macro will behave as a normal "/cast Symbiosis" macro. If you click on the macro, the spell you gained with Symbiosis will be cast.
+
+Also make sure to have the following line in the macro: **/script Symbiosis.Click()**, which is the simulation of the click. You don't have to have the macro in your bars for the hotkey to work, but you need at least one free (personal) macro slot.
+
+Note: At this moment in time macros like "/cast [@SYMB] Symbiosis" do not work. They are simply broken for Symbiosis and will always go to your current target (or yourself if you don't have a target). This has nothing to do with this addon and Blizzard has to fix it. You can, however, use a workaround with "/target SYMB" - "/cast Symbiosis" - "/targetlasttarget". For the click on the Symbiosis button the addon already uses this workaround. If you want to use the macro/hotkey you'll have to update the macro code manually in the GUI panel.
+
+=== __<<color #69CCF0>>Spells Get<</color>> and <<color #69CCF0>>Spells Grant<</color>>__
+
+In these two panels you can see all possible spells you can get from Symbiosis and all spells you can grant other people with Symbiosis. The spell you get only depends on **your** specialization: If you are a Feral and place Symbiosis on a Priest, you will always get the same spell, regardless of whether the Priest is Shadow, Holy or Discipline. If you spec Restoration you will get a different spell. The same applies for the person you buff with Symbiosis: The spell they get only depends on **their** specialization: If he is a Shadow-Priest it does not matter what specialization you have, he will always get the same spell. If he specs Holy he will get a different one.
+
+=== __<<color #69CCF0>>Don't show units tagged as...<</color>>
+
+Removes raid members who are offline, stolen, dead and/or in an insignificant group from the selection list when you right-click the Symbiosis button. "Stolen" means the player already has a Symbiosis buff from another druid. If you check "In insignificant Group" only raid members in the first 2 (5) subgroups will be listed when you are in a 10 (25) people raid.
+
+== __Masque__
+
+[[http://www.curse.com/addons/wow/masque|Masque]] (old ButtonFacade) is supported. You can use your favourite Masque skin on the Symbiosis button!
+
+== __ElvUI Shadow & Light__
+
+As of this point there seems to be a critical taint issue caused by the ElvUI addon "Shadow & Light", which will prevent the user from switching talents as soon as the Blizzard_MacroUI addon is loaded (which Symbiosis uses for its macro stuff). The workaround is to not open the macro window and disable the usage of the Symbiosis macro (/symb config -> macro -> disable macro).
+
+== __ToDo:__
+
+* Translations: If you want to see this addon in your language you can help by [[http://wow.curseforge.com/addons/symbiosis/localization/|translating]] it. If you have any questions chat me up at [[http://www.curse.com/private-messages/send?recipient=Jitter88|Curse]].
+
+== __German / Deutsch: __
+
+Dieses Addon erstellt einen neuen Button in deinem UI. Dieser hilft dir, Symbiose auf andere Spieler zu wirken. Klicke dafür zunächst mit der **rechten Maus-Taste** auf den Button (während du in einer Gruppe bist). Es wird eine Liste aller Gruppenmitglieder angezeigt. Neben dem Namen der einzelnen Spieler wird einerseits der Zauber angezeigt, den du erhälst wenn du Symbiose auf denjenigen wirkst und andererseits der Zauber den der andere Spieler erhält. Gehe mit der Maus über das Icon des Zaubers, um den entsprechenden Tooltip anzuzeigen. Klicke dann auf einen Spieler (links-Klick), um ihn auszuwählen. Nun kannst du mit einem Klick auf den Symbiose-Button Symbiose direkt auf diesen Spieler wirken. Um in das GUI (Optionen) zu gelangen, benutze <<color #FF0000>>/symbiosis options<</color>>.

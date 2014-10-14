@@ -1,0 +1,15 @@
+1. Create a texture file. This file must be in a format WoW recognizes, e.g. ".tga". Width and height of the image must be of power of 2.
+
+2. Name your texture file something distinctive, like "MyAwesomeArt1".
+
+3. Copy your texture file to: "WoW\Interface\AddOns\Symbiosis\Media\MyMediaAddon\".
+
+4. Open the file "MyMediaAddon.lua" (in the same folder) with a text editor (Notepad++ is a good one).
+
+5. In the 1st line you will see "local FileNames" and a list of names. Add your "MyAwesomeArt1" there (or whatever it is called, also you can remove the dummy names). You must seperate your file names with a comma and all names must be in "quotation marks"! You don't have to add the file extension.
+
+6. Copy the whole "MyMediaAddon" to your "WoW\Interface\AddOns\" directory.
+
+7. Restart WoW.
+
+(You can also use the addon SharedMedia. It has a HOWTO and a simple batch file for your needs.)

@@ -1,0 +1,5 @@
+## Interface: 50300
+
+## Dependencies: Symbiosis
+
+MyMediaAddon.lua
